@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for列表渲染</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+        table{
+            text-align: center;
+            margin: 10px  auto;
+            width: 600px;
+            border: 1px solid  green;
+
+
+        }
+
+        tr  th {
+            background: beige;
+            text-align: center;
+            margin: 10px  auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="app3" class="container">
+
+ <!--   <table class="table table-bordered table-striped table-hover">
+        <caption class="text-center"><h2>运维开发常见参考书籍</h2></caption>
+
+        <tr  class="warning">
+            <th>序号</th>
+            <th class="success">书名</th>
+            <th>作者</th>
+            <th>出版时间</th>
+
+        </tr>
+
+        <tr v-for="(book,index) in  booksinfo">
+
+            <td>{{ index+1 }}</td>
+            <td class="success" >{{book.name}}</td>
+            <td> {{book.author}}</td>
+            <td>{{book.pubdate}}</td>
+
+        </tr>
+
+
+
+    </table>
+    -->
+    <ul  v-for="(key,value,index) in booksinfo">
+        <li >  {{ index }} {{ value  }} :{{ key }} </li>
+    </ul>
+</div>
+<script>
+
+
+    var app3  = new  Vue({
+        el:"#app3",
+        data:{
+            booksinfo:{
+                name:'web开发权威指南',
+                pub_data:'2017年3月',
+                mike_in:'教育出版社',
+                author:'刘天奇'
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

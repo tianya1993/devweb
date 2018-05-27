@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for列表渲染</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+        table{
+            text-align: center;
+            margin: 10px  auto;
+            width: 600px;
+            border: 1px solid  green;
+
+
+        }
+
+            tr  th {
+            background: beige;
+            text-align: center;
+            margin: 10px  auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="app3" class="container">
+
+    <table class="table table-bordered table-striped table-hover">
+        <caption class="text-center"><h2>运维开发常见参考书籍</h2></caption>
+
+        <tr  class="warning">
+            <th>序号</th>
+            <th class="success">书名</th>
+            <th>作者</th>
+            <th>出版时间</th>
+
+        </tr>
+
+        <tr v-for="(book,index) in  booksinfo">
+
+            <td>{{ index+1 }}</td>
+            <td class="success" >{{book.name}}</td>
+            <td> {{book.author}}</td>
+            <td>{{book.pubdate}}</td>
+
+        </tr>
+
+
+div>p*6
+
+
+    </table>
+</div>
+<script>
+
+
+    var app3  = new  Vue({
+        el:"#app3",
+        data:{
+            booksinfo:[
+                {
+                    name:'《MongoDB实战指南》',
+                    author:"梁三石",
+                    pubdate:'2017年3月'
+                },
+                {
+                    name:'Python运维开发实践',
+                    author:"李成才",
+                    pubdate:'2015年3月'
+
+                },
+                {
+                    name:'MySQL权威指南',
+                    author:"王学滨",
+                    pubdate:'2015年3月'
+                },
+
+
+                {
+                    name:'MySQL数据库备份与迁移',
+                    author:"肖天国",
+                    pubdate:'2016年3月'
+                },
+                {
+                    name:'高可用Linux安全架构',
+                    author:"李天一",
+                    pubdate:'2016年3月'
+                },
+
+                {
+                    name:'Web运维实践手册',
+                    author:"宋天国",
+                    pubdate:'2018年3月'
+                },
+                {
+                    name:'Django框架',
+                    author:"肖国",
+                    pubdate:'2016年3月'
+                }
+            ],
+        }
+    })
+
+
+</script>
+</body>
+</html>

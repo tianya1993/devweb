@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for列表渲染</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+        table{
+            text-align: center;
+            margin: 10px  auto;
+            width: 600px;
+            border: 1px solid  green;
+
+
+        }
+
+        tr  th {
+            background: beige;
+            text-align: center;
+            margin: 10px  auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="page-header container">
+    <h1>Vue.JS 事件绑定<small>Subtext for header</small></h1>
+</div>
+
+<div  class="container">
+<div id="bannerimage" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#bannerimage" data-slide-to="0" class="active"></li>
+        <li data-target="#bannerimage" data-slide-to="1"></li>
+        <li data-target="#bannerimage" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="./images/xiangyingshi.jpg" alt="...">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="./images/xiangyingshi.jpg" alt="...">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="./images/yujian.jpg" alt="...">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="./images/xiangyingshi.jpg" alt="...">
+            <div class="carousel-caption">
+                历史记录时刻
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#bannerimage" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#bannerimage" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+<div id="app3" class="container">
+    <div > </div>
+
+   <button v-on:click="counter += 1" class="btn btn-success btn-default">提交</button>
+    <p>这个按钮被点击了 {{ counter }} 次。</p>
+    <button class="btn btn-danger btn-default">删除</button>
+</div>
+<script>
+
+
+    var app3  = new  Vue({
+        el:"#app3",
+        data:{
+                counter: 0
+            },
+
+
+    })
+
+
+</script>
+</body>
+</html>

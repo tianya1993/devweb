@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--v-for循环之数组的循环-->
+<div id="app">
+    <ol><h2>常见交通工具</h2>
+        <li v-for=" (v,index)  in  tabs">{{ index}}:{{ v.name }}</li>
+    </ol>
+
+</div>
+
+<!--列表渲染也支持of代替in作为分隔符-->
+<div id="app2">
+    <ol><h2>运维开发常见参考书籍：</h2>
+        <li v-for=" book  of  books">{{ book.name }}</li>
+    </ol>
+
+</div>
+<!--数组渲染 列表渲染-->
+<div id="app3">
+    <ol><h2>运维开发常见参考书籍：</h2>
+        <template v-for=" books  of  booksinfo" >
+        <li >书名：{{ books.name }}</li>
+        <li >作者：{{ books.author }}</li>
+        <li >出版时间：{{ books.pubdate }}</li>
+        </template>
+    </ol>
+
+</div>
+
+
+
+<script>
+    var app  = new  Vue({
+    el:"#app",
+    data:{
+        tabs:[
+            {name:'火车'},
+            {name:'汽车'},
+            {name:'公交车'},
+            {name:'地铁'},
+            {name:'飞机'},
+            {name:'轮船'},
+            {name:'自行车'}
+        ],
+         }
+    })
+    //v-of
+    var app2  = new  Vue({
+        el:"#app2",
+        data:{
+            books:[
+                {
+                    name:'《MongoDB实战指南》',
+                    author:"梁三石",
+                    pubdate:'2017年3月'
+                },
+                {
+                    name:'Python运维开发实践',
+                    author:"李成才",
+                    pubdate:'2015年3月'
+
+                },
+                {
+                    name:'MySQL权威指南',
+                    author:"王学滨",
+                    pubdate:'2015年3月'
+                },
+
+
+                {
+                    name:'MySQL数据库备份与迁移',
+                    author:"肖天国",
+                    pubdate:'2016年3月'
+                },
+                {
+                    name:'高可用Linux安全架构',
+                    author:"李天一",
+                    pubdate:'2016年3月'
+                },
+
+                {
+                    name:'Web运维实践手册',
+                    author:"宋天国",
+                    pubdate:'2018年3月'
+                },
+                {
+                    name:'Django框架',
+                    author:"肖国",
+                    pubdate:'2016年3月'
+                }
+            ],
+        }
+    })
+
+
+    var app3  = new  Vue({
+        el:"#app3",
+        data:{
+            booksinfo:[
+                {
+                    name:'《MongoDB实战指南》',
+                    author:"梁三石",
+                    pubdate:'2017年3月'
+                },
+                {
+                    name:'Python运维开发实践',
+                    author:"李成才",
+                    pubdate:'2015年3月'
+
+                },
+                {
+                    name:'MySQL权威指南',
+                    author:"王学滨",
+                    pubdate:'2015年3月'
+                },
+
+
+                {
+                    name:'MySQL数据库备份与迁移',
+                    author:"肖天国",
+                    pubdate:'2016年3月'
+                },
+                {
+                    name:'高可用Linux安全架构',
+                    author:"李天一",
+                    pubdate:'2016年3月'
+                },
+
+                {
+                    name:'Web运维实践手册',
+                    author:"宋天国",
+                    pubdate:'2018年3月'
+                },
+                {
+                    name:'Django框架',
+                    author:"肖国",
+                    pubdate:'2016年3月'
+                }
+            ],
+        }
+    })
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

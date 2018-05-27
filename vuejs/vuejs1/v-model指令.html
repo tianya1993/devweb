@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="btn btn-default">学生成绩表</div>
+<!--学生成绩表-->
+<div id="app" class="container">
+	<div class=" col-xs-4 col-md-offset-4">
+	<h1>个人信息</h1>
+		<label>姓名:<input type="text" v-model="name" class="form-control text-center" placeholder="请输入你的个人信息">
+	<pre>{{ name }}</pre>
+		</label>
+		<label>年龄:<input type="text" v-model.number="age" class="form-control text-center" placeholder="年龄">
+			<span>{{   age+age }}</span>
+		</label>
+	<label>格言:<input type="text" v-model="info" class="form-control text-center" placeholder="爱好">
+			<span>{{   info  }}</span>
+	</label>
+		<h2>性别</h2>
+		<label class="btn btn-default">男
+			<input type="radio"   v-model="sex" value="male"  class="">
+		</label>
+
+		<label class="btn btn-default">女
+			<input type="radio"   v-model="sex"  value="female" ></label>
+		<hr>
+		 性别：{{ sex }}
+
+		<hr>
+		爱好：
+		<label class="btn btn-default">跑步
+			<input type="checkbox"   v-model="like" value="跑步"  >
+		</label class="btn btn-default">
+		<label class="btn btn-default">爬山
+			<input type="checkbox"   v-model="like" value="爬山" >
+		</label >
+		<label class="btn btn-default">阅读
+			<input type="checkbox"   v-model="like" value="阅读" >
+		</label>
+		<label class="btn btn-default">游泳
+			<input type="checkbox"   v-model="like" value="游泳"  >
+		</label class="btn btn-default">
+		<label class="btn btn-default">逛街
+			<input type="checkbox"   v-model="like" value="逛街" >
+		</label >
+		<label class="btn btn-default">健身
+			<input type="checkbox"   v-model="like" value="健身" >
+		</label>
+		<hr>
+		爱好：{{ like }}
+		<hr>多行文本
+		<textarea  v-model="msg"></textarea>
+		<hr>
+		{{msg}}
+		<hr>单选
+
+			<select v-model="selecte">
+				<option disabled value="">请选择</option>
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<span>Selected: {{ selecte }}</span>
+
+		<hr>
+		多选
+		<select v-model="selected" multiple style="width: 50px;">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+		<br>
+		<span>Selected: {{ selected }}</span>
+
+	</div>
+
+</div>
+
+<script>
+	var app  = new  Vue({
+		el:"#app",
+		data:{
+			name:"李四",
+			age:24,
+			info:"长江后浪推前浪",
+			sex:'female',
+			like:[],
+			msg:"多行文本",
+			selecte:'',
+			selected:[]
+
+		},
+	})
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

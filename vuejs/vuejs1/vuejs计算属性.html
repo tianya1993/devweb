@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--学生成绩表-->
+<div id="app" class="container">
+	<table class="table table-bordered table-striped table-hover">
+		<caption class="text-center"><h2>学生成绩表</h2></caption>
+		<thead >
+		<th class="text-center">学科</th>
+		<th class="text-center">分数</th>
+		</thead>
+		<tbody class="text-center">
+		<tr>
+			<td>数学</td>
+			<td><input type="text" v-model.number="math" class="form-control text-center"></td>
+		</tr>
+		<!--v-model.number 制定为数字类型-->
+		<tr>
+			<td>物理</td>
+			<td><input type="text" v-model.number="physics" class="form-control text-center"></td>
+		</tr>
+		<tr>
+			<td>英语</td>
+			<td><input type="text" v-model.number="english" class="form-control text-center "></td>
+		</tr>
+		<!--求总分-->
+		<tr>
+			<td>总分</td>
+			<td>{{ math + physics+ english}}</td>
+		</tr>
+		<tr>
+			<td>平均分</td>
+			<td>{{ Math.round((math + physics+ english)/3) }}</td>
+		</tr>
+
+
+
+
+		<tr>
+			<td>总分(计算属性)</td>
+			<td>{{ sum }}</td>
+		</tr>
+
+		<tr>
+			<td>平均分[计算属性]</td>
+			<td>{{average}}</td>
+		</tr>
+
+		<!--求平均分-->
+
+		</tbody>
+
+
+
+	</table>
+
+
+</div>
+
+
+
+
+<script>
+	var app  = new  Vue({
+		el:"#app",
+		data:{
+			math:80,
+			physics:90,
+			english:100
+		},
+		computed:{
+			sum: function () {
+				return  this.math + this.physics + this.english
+
+			},
+			average:function () {
+				return Math.round((this.sum/3))
+
+	}
+		}
+	})
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
